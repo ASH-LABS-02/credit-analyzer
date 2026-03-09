@@ -1,0 +1,36 @@
+# Ignore test files and development artifacts
+backend/tests/
+backend/.pytest_cache/
+backend/.hypothesis/
+backend/htmlcov/
+backend/.coverage
+backend/venv/
+backend/__pycache__/
+
+# Ignore frontend development files
+frontend/node_modules/
+frontend/.vite/
+frontend/coverage/
+
+# Ignore local environment files
+.env
+.env.local
+backend/.env
+
+# Ignore documentation
+*.md
+!README.md
+
+# Ignore git
+.git/
+.gitignore
+
+# Ignore IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
