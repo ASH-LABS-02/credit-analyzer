@@ -5,8 +5,8 @@
   "devCommand": "cd frontend && npm run dev",
   "framework": null,
   "functions": {
-    "api/index.py": {
-      "runtime": "python3.12"
+    "api/**/*.py": {
+      "runtime": "python3.9"
     }
   },
   "rewrites": [
