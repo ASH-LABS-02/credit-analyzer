@@ -4,11 +4,6 @@
   "installCommand": "npm install --prefix frontend",
   "devCommand": "cd frontend && npm run dev",
   "framework": null,
-  "functions": {
-    "api/*.py": {
-      "runtime": "python3.12"
-    }
-  },
   "rewrites": [
     {
       "source": "/api/:path*",
@@ -29,17 +24,6 @@
     {
       "source": "/health",
       "destination": "/api/index"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        }
-      ]
     }
   ]
 }
