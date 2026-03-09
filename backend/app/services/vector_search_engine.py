@@ -6,8 +6,17 @@ and OpenAI embeddings. Supports document chunking, embedding generation, and sim
 """
 
 from typing import List, Dict, Optional
-import numpy as np
-import faiss
+
+# Optional imports for vector search (not available on Vercel)
+try:
+    import numpy as np
+    import faiss
+    FAISS_AVAILABLE = True
+except ImportError:
+    FAISS_AVAILABLE = False
+    np = None
+    faiss = None
+
 from openai import AsyncOpenAI
 from app.core.config import settings
 
