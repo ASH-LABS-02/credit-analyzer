@@ -869,9 +869,16 @@ Return ONLY the recommendation text in Markdown format.
         
         Raises:
             ValueError: If CAM content is invalid or export fails
+            NotImplementedError: If weasyprint is not available (e.g., on Vercel)
         
         Requirements: 7.4
         """
+        if not WEASYPRINT_AVAILABLE:
+            raise NotImplementedError(
+                "PDF export is not available in this environment. "
+                "Please use DOCX export instead or deploy with weasyprint support."
+            )
+        
         try:
             # Convert markdown to HTML
             html_content = markdown2.markdown(
