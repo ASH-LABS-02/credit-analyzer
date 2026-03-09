@@ -16,7 +16,13 @@ from docx import Document
 from docx.shared import Inches, Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 import markdown2
-from weasyprint import HTML, CSS
+
+# Optional import for PDF generation (not available on Vercel)
+try:
+    from weasyprint import HTML, CSS
+    WEASYPRINT_AVAILABLE = True
+except ImportError:
+    WEASYPRINT_AVAILABLE = False
 
 from app.core.config import settings
 from app.core.audit_logger import AuditLogger
