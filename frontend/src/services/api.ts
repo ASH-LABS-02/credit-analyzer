@@ -9,8 +9,10 @@
 
 import axios, { AxiosInstance, AxiosError, AxiosResponse } from 'axios';
 
-// API Base URL - defaults to localhost for development
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+// API Base URL - use empty string for same domain in production, localhost for dev
+const API_BASE_URL = import.meta.env.VITE_API_URL !== undefined 
+  ? import.meta.env.VITE_API_URL 
+  : (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000');
 
 // Application Types
 export interface Application {
